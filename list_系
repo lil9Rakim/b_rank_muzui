@@ -1,1 +1,10 @@
 
+
+#リストの中の重複があったらTRUE
+li = ["HND", "NRT","KIX", "NGO", "NGO"]
+
+if len(li) != len(set(li)):
+    print("true")
+    
+else:
+    print("false")
