@@ -1,0 +1,7 @@
+import collections
+
+li = ["HND", "NRT", "KIX", "NGO", "NGO", "NGO", "NGO", "NGO"]
+
+c = collections.Counter(li)
+
+print(max(c.values()))
