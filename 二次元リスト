@@ -1,1 +1,10 @@
 
+li = []
+n = int(input())
+
+for i in range(n):
+    k,m = input().split()
+    li.append([k,m])　二次元リストの追加方法for文ないで
+
+for i in li:
+    print(i[1])
