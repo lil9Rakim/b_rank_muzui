@@ -1,7 +1,23 @@
+ライブラリー使用
 import collections
 
 li = ["HND", "NRT", "KIX", "NGO", "NGO", "NGO", "NGO", "NGO"]
 
 c = collections.Counter(li)
-
 print(max(c.values()))
+
+paizaの模範解答↓↓
+
+li = ["HND", "NRT", "KIX", "NGO", "NGO", "NGO", "NGO", "NGO"]
+count = {}
+
+for ji in li:
+    if ji in count:
+        count[ji] += 1
+    else:
+        count[ji] = 1
+      
+for (key,value) in count.items():　#.items()では「キーと値のペア」を取り出す。もしつけないとValueError: too many values to unpack (expected 2)こうなる
+
+    if value != 1:
+        print(value)
