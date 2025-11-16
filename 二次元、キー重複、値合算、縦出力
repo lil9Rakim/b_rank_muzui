@@ -19,7 +19,7 @@ for key,value in li:
     if not found:
         result.append([key,value])
         
-result = sorted(result, reverse=True, key=lambda x: x[1])        
+result = sorted(result, reverse=True, key=lambda x: x[1])   #これは降順するやつだけど、いつもコピペ
 
-for key,value in result:
+for key,value in result:　　二次元リストを縦に出力
     print(key,value)
