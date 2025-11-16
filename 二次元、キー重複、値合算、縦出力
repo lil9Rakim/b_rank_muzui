@@ -1,1 +1,25 @@
 
+n = int(input())
+
+li = []
+
+for i in range(n):
+    row = input().split()
+    li.append([row[0],int(row[1])])　　
+
+#keyが同じ値はvalueを足し算
+result = []    
+for key,value in li:
+    found = False  #同じ値が見つからない間はfalse
+    for item in result:
+        if item[0] == key:
+            item[1] += value
+            found = True
+            break
+    if not found:
+        result.append([key,value])
+        
+result = sorted(result, reverse=True, key=lambda x: x[1])        
+
+for key,value in result:
+    print(key,value)
