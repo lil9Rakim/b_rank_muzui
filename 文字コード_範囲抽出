@@ -1,0 +1,7 @@
+s = input().strip()
+a = ord(s[0])  #ord()で文字コードに変換
+b = ord(s[-1])
+
+
+for code in range(min(a,b),max(a,b)+1): #もしもa、bがアルファベット順じゃなかった場合のためにmin,maxを使っている
+    print(chr(code))  # chr()で数字に変換
