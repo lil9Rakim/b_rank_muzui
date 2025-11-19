@@ -1,1 +1,8 @@
+for i in range(5):
+    bord = input().strip()　#これだと最後の一行しかのこらない
+
+#修正版
+bord = []
+for i in range(5):
+    bord.append(input().strip())
 
