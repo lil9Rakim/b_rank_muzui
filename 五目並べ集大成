@@ -1,0 +1,30 @@
+result = "D"
+
+bord = []
+
+for _ in range(5):
+    bord.append(input().strip())
+    
+for c in range(5):
+    col = [bord[r][c] for r in range(5)]
+    if col[0] != "." and all(ch == col[0] for ch in col):
+        result = col[0]
+        break
+    
+if result == "D":
+    for r in range(5):
+        row = bord[r]
+        if row[0] != "." and all(ch == row[0] for ch in row):
+            result = row[0]
+            break
+
+if result == "D":
+    diag1 = [bord[i][i] for i in range(5)]
+    diag2 = [bord[i][4-i] for i in range(5)]
+    if diag1[0] != "." and all(ch == diag1[0] for ch in diag1):
+        result = diag1[0]
+    elif diag2[0] != "." and all(ch == diag2[0] for ch in diag2):
+        result = diag2[0]
+        
+print(result)        
+    
