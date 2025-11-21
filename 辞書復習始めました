@@ -1,0 +1,5 @@
+キーから値を取り出す → dict[key]
+
+キーと値をペアで取り出す → for key, value in dict.items():
+
+特定のキーと値を出力する → print(key, dict[key])
