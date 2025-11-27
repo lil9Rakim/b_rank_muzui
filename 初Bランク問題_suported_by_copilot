@@ -1,0 +1,19 @@
+h,w = map(int,input().split())
+bord = []
+for i in range(h):
+    bord.append(list(input()))
+    
+y,x = map(int,input().split())
+
+targets = [(y,x),(y-1,x),(y+1,x),(y,x-1),(y,x+1)]
+
+for ty,tx in targets:
+    if 0 <= ty < h and 0 <= tx < w: ##ここで範囲チェック必要、<=じゃなくて<
+        
+        if bord[ty][tx] == ".":
+            bord[ty][tx] = "#"
+        elif bord[ty][tx] == "#":
+            bord[ty][tx] = "."
+            
+for row in bord:
+    print("".join(row))
