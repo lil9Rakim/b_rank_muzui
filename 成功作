@@ -1,0 +1,34 @@
+h,w = map(int,input().split())
+bord = []
+for i in range(h):
+    bord.append(list(input()))
+    
+y,x = map(int,input().split())
+
+targets = set()
+
+for i in range(h): # tate
+    targets.add((i,x))
+    
+for j in range(w): #yoko
+    targets.add((y,j))
+    
+for i in range(1,min(h,w)):
+    if y+i < h and x+i < w: #右下
+        targets.add((y+i , x+i))
+    
+    if y+i < h and x-i >= 0: #左下
+        targets.add((y+i , x-i))
+    
+    if y-i >= 0 and x+i < w:# 右上
+        targets.add((y-i,x+i))
+        
+    if y-i >= 0 and x-i >= 0:"左上"
+        targets.add((y-i,x-i))
+        
+targets.add((y,x))
+
+for ty, tx in targets:
+    bord[ty][tx] = "." if bord[ty][tx] == "#" else "#"
+for row in bord:
+    print("".join(row))
