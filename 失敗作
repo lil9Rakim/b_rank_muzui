@@ -1,0 +1,75 @@
+h,w = map(int,input().split())
+bord = []
+for i in range(h):
+    bord.append(list(input()))
+    
+y,x = map(int,input().split())
+
+yoko = []
+for i in range(w-x):
+    yoko.append([y,x+i])
+    
+tate = []
+for i in range(h-y):
+    tate.append([y+i,x])
+    
+migishita = []    
+for i in range(min(h-y,w-x)):
+    migishita.append([y+i,x+i])
+    
+hidarishita = []
+for i in range(min(h-y,w-x)):
+    hidarishita.append([y+i,x-i])
+
+migiue = []
+for i in range(min(h-y,w-x)):
+    migiue.append([y-i,x+i])
+    
+hidariue = []
+for i in range(min(h-y,w-x)):
+    hidariue.append([y-i,x-i])
+
+for ty,tx in tate:
+    if 0 <= ty < h and 0 <= tx < w:
+        
+        if bord[ty][tx] == "#":
+            bord[ty][tx] = "."
+        else:
+            bord[ty][tx] = "#"
+        
+for ty,tx in yoko:
+    if 0 <= ty < h and 0 <= tx < w:
+        if bord[ty][tx] == "#":
+            bord[ty][tx] = "."
+        else:
+            bord[ty][tx] = "#"    
+        
+for ty,tx in migishita:
+    if 0 <= ty < h and 0 <= tx < w:
+        if bord[ty][tx] == "#":
+            bord[ty][tx] = "."
+        else:
+            bord[ty][tx] = "#"        
+        
+for ty,tx in hidarishita:
+    if 0 <= ty < h and 0 <= tx < w:
+        if bord[ty][tx] == "#":
+            bord[ty][tx] = "."
+        else:
+            bord[ty][tx] = "#" 
+            
+for ty,tx in migiue:
+    if 0 <= ty < h and 0 <= tx < w:
+        if bord[ty][tx] == "#":
+            bord[ty][tx] = "."
+        else:
+            bord[ty][tx] = "#"
+            
+for ty,tx in hidariue:
+    if 0 <= ty < h and 0 <= tx < w:
+        if bord[ty][tx] == "#":
+            bord[ty][tx] = "."
+        else:
+            bord[ty][tx] = "#"             
+for row in bord:
+    print("".join(row))
