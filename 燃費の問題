@@ -1,0 +1,17 @@
+X = int(input())
+F_1,F_2 = map(int,input().split())
+L,N = map(int,input().split())
+stops = list(map(int,input().split()))
+stops.append(L)
+pos = 0    
+fuel = 0
+
+for stop in stops:
+    dist = stop - pos
+    if dist <= X:
+        fuel += dist * F_1
+    else:
+        fuel += (X * F_1) + (dist-X)*F_2
+    pos = stop                           posは数値を毎回新しく更新していく　足し算じゃない
+        
+print(fuel)        
