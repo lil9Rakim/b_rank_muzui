@@ -1,0 +1,23 @@
+n = int(input())
+times = []
+ys = []
+xs = []
+for _ in range(n):
+    t,y,x = map(int,input().split())
+    times.append(t)
+    ys.append(y)
+    xs.append(x)
+    
+for i in range(n-1):
+    t1, t2 = times[i],times[i+1]
+    y1, y2 = ys[i],ys[i+1]
+    x1, x2 = xs[i],xs[i+1]
+    length = t2 - t1
+    dy = y2 - y1
+    dx = x2 - x1
+    end = length+1 if i == n-2 else length
+    
+    for k in range(end):
+        y = y1 + dy * k / length
+        x = x1 + dx * k / length
+        print(round(y),round(x))
