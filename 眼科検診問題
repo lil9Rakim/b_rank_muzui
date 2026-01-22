@@ -1,0 +1,24 @@
+n = int(input()) 
+tests = {"TA": {"ok":0, "ng":0, "pass":False},
+         "TB": {"ok":0, "ng":0, "pass":False},
+         "TC": {"ok":0, "ng":0, "pass":False},
+         "TD": {"ok":0, "ng":0, "pass":False}}
+
+for _ in range(n):
+    t, j = input().split()
+    if not tests[t]["pass"]:  # まだ判定が決まってないなら
+        tests[t][j] += 1
+        if tests[t]["ok"] >= 2:
+            tests[t]["pass"] = True
+        elif tests[t]["ng"] >= 2:
+            tests[t]["pass"] = False  # 不合格確定
+if tests["TA"]["pass"]:
+    print("A")
+elif tests["TB"]["pass"]:
+    print("B")
+elif tests["TC"]["pass"]:
+    print("C")
+elif tests["TD"]["pass"]:
+    print("D")
+else:
+    print("E")
