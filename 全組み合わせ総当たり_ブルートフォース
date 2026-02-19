@@ -1,0 +1,18 @@
+import itertools
+
+N,X = map(int,input().split())
+w = []
+for _ in range(N):
+    w.append(int(input()))
+    
+ans = 0
+for i in range(1,N + 1):
+    
+    for combo in itertools.combinations(w,i):
+        current_sum = sum(combo)
+        
+        if current_sum <= X:
+            if current_sum > ans:
+                ans = current_sum
+            
+print(ans)                
