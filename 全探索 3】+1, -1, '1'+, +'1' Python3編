@@ -1,0 +1,11 @@
+N = int(input()); X = [input() for _ in range(N)]; ans = 10**19
+for i in range(N):
+    for j in range(i + 1, N):
+        p1 = [int(X[i]),int(X[i])+1,int(X[i])-1,int("1"+X[i]),int(X[i]+"1")]
+        p2 = [int(X[j]),int(X[j])+1,int(X[j])-1,int("1"+X[j]),int(X[j]+"1")]
+        
+        for a in p1:
+            for b in p2:
+                ans = min(ans,abs(a-b))
+
+print(ans)                
