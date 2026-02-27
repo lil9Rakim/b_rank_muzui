@@ -1,0 +1,22 @@
+N,H,W = map(int,input().split())
+sy,sx = map(int,input().split())
+y = sy-1 #インデックスは0からだから-1で調整
+x = sx-1
+
+s = input()
+grid = []
+for _ in range(H): #多次元リストにする。
+    row = list(map(int,input().split()))#一行一行の入力をリストに
+    grid.append(row)#入れる
+    
+for way in s:
+    if way == "F": #y座標からー1で見た目だと一段上に行く
+        y -= 1
+    elif way == "B":#
+        y += 1
+    elif way == "R":#
+        x +=1
+    elif way == "L":#
+        x -=1
+        
+    print(grid[y][x])#for文の中で　print
