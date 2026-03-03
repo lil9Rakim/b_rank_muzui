@@ -1,0 +1,9 @@
+s = input()
+x = []
+
+for i in range(4):
+    b = 8 * i
+    x.append(s[b:b+8])
+
+x = list(map(int,x)) #str型のリストの中の要素を全部int型に変更
+print(sum(x))
