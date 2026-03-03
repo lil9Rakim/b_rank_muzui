@@ -1,0 +1,12 @@
+s = input()
+s2 = s.replace("4","a").replace("@","a").replace("1","i").replace("!","i").replace("2","z")
+# s.replce("A","B")  sに含まれる要素　"A" 　を　"B"に置き換える
+
+if "paiza" in s:
+    print("paiza")
+
+elif "paiza" in s2:
+    print("leet")
+
+else:
+    print("nothing")
