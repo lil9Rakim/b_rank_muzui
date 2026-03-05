@@ -1,0 +1,36 @@
+N = int(input())
+
+s = []
+
+for _ in range(N):
+    row = list(map(int,input().split()))
+    s.append(row)
+ans = 0
+for i in range(N):
+    current = 0
+    for j in range(N):
+        current += s[i][j]
+    if current >= ans:
+        ans = current
+
+for i in range(N):
+    current = 0
+    for j in range(N):
+        current += s[j][i]
+    if current >= ans:
+        ans = current
+current = 0        
+for i in range(N):
+    
+    current += s[i][i]
+if current >= ans:
+    ans = current
+
+current = 0
+for i in range(N):
+    
+    current += s[i][N-1-i]
+if current >= ans:
+    ans = current
+        
+print(ans)
